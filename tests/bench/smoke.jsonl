@@ -1,0 +1,4 @@
+{"engine": "llama.cpp 0.8.0", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.375, "prefill_tps": 50.7, "decode_tps": 16.72}
+{"engine": "rapid-mlx 1.0.1 (MTP)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.462, "prefill_tps": 41.1, "decode_tps": 21.91}
+{"engine": "mlx-serve 26.11.1 (MTP)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.464, "prefill_tps": 40.9, "decode_tps": 21.9}
+{"engine": "mlx-serve 26.11.1 (DFlash, own pack)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.426, "prefill_tps": 44.6, "decode_tps": 18.37}

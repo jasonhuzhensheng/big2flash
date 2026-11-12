@@ -1,0 +1,18 @@
+{"engine": "big2flash 2.1 (MTP)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.715, "prefill_tps": 26.6, "decode_tps": 28.97}
+{"engine": "big2flash 2.1 (MTP)", "case": "long", "prompt_tokens": 8072, "output_tokens": 200, "ttft_s": 51.439, "prefill_tps": 156.9, "decode_tps": 16.31}
+{"engine": "big2flash 2.1 (MTP off)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.675, "prefill_tps": 28.2, "decode_tps": 17.89}
+{"engine": "big2flash 2.1 (MTP off)", "case": "long", "prompt_tokens": 8066, "output_tokens": 200, "ttft_s": 49.036, "prefill_tps": 164.5, "decode_tps": 20.38}
+{"engine": "mlx-lm 0.32.2", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.562, "prefill_tps": 33.8, "decode_tps": 19.27}
+{"engine": "mlx-lm 0.32.2", "case": "long", "prompt_tokens": 8066, "output_tokens": 200, "ttft_s": 45.785, "prefill_tps": 176.2, "decode_tps": 17.9}
+{"engine": "Ollama 0.40.14", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.336, "prefill_tps": 56.5, "decode_tps": 15.15}
+{"engine": "Ollama 0.40.14", "case": "long", "prompt_tokens": 8066, "output_tokens": 200, "ttft_s": 60.452, "prefill_tps": 133.4, "decode_tps": 19.41}
+{"engine": "LM Studio 0.4.28 (llama.cpp 2.69)", "case": "short", "prompt_tokens": 59, "output_tokens": 256, "ttft_s": 0.691, "prefill_tps": 85.3, "decode_tps": 13.17}
+{"engine": "LM Studio 0.4.28 (llama.cpp 2.69)", "case": "long", "prompt_tokens": 8106, "output_tokens": 200, "ttft_s": 65.02, "prefill_tps": 124.7, "decode_tps": 13.98}
+{"engine": "llama.cpp 0.8.0", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.539, "prefill_tps": 35.3, "decode_tps": 16.49}
+{"engine": "llama.cpp 0.8.0", "case": "long", "prompt_tokens": 8066, "output_tokens": 200, "ttft_s": 53.726, "prefill_tps": 150.1, "decode_tps": 14.96}
+{"engine": "rapid-mlx 1.0.1 (MTP)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.608, "prefill_tps": 31.2, "decode_tps": 21.9}
+{"engine": "rapid-mlx 1.0.1 (MTP)", "case": "long", "prompt_tokens": 8070, "output_tokens": 200, "ttft_s": 45.737, "prefill_tps": 176.4, "decode_tps": 20.51}
+{"engine": "rapid-mlx 1.0.1 (no spec)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.599, "prefill_tps": 31.7, "decode_tps": 18.48}
+{"engine": "rapid-mlx 1.0.1 (no spec)", "case": "long", "prompt_tokens": 8070, "output_tokens": 200, "ttft_s": 51.915, "prefill_tps": 155.4, "decode_tps": 16.39}
+{"engine": "mlx-serve 26.11.1 (MTP)", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.525, "prefill_tps": 36.2, "decode_tps": 15.25}
+{"engine": "mlx-serve 26.11.1 (MTP)", "case": "long", "prompt_tokens": 8098, "output_tokens": 200, "ttft_s": 56.787, "prefill_tps": 142.6, "decode_tps": 14.22}

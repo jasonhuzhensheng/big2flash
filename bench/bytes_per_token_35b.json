@@ -1,0 +1,16 @@
+{
+ "read_per_token_bytes": 1669560576.0,
+ "by_component": {
+  "lm_head": 286064640,
+  "shared expert": 70865920,
+  "routed experts": 566231040.0,
+  "other": 331776,
+  "linear attention": 570420480,
+  "router": 22282240,
+  "full attention + indexer": 153364480,
+  "embedding (1 row)": 0,
+  "vision (not read)": 0
+ },
+ "mtp_bytes": 0,
+ "expert_bytes_each": 1769472.0
+}

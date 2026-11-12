@@ -1,0 +1,12 @@
+{"engine": "big2flash (MTP)", "case": "short", "prompt_tokens": 24, "output_tokens": 256, "ttft_s": 0.739, "prefill_tps": 32.5, "decode_tps": 21.58}
+{"engine": "big2flash (MTP)", "case": "long", "prompt_tokens": 8072, "output_tokens": 200, "ttft_s": 49.563, "prefill_tps": 162.9, "decode_tps": 26.35}
+{"engine": "big2flash", "case": "short", "prompt_tokens": 24, "output_tokens": 256, "ttft_s": 0.658, "prefill_tps": 36.5, "decode_tps": 19.96}
+{"engine": "big2flash", "case": "long", "prompt_tokens": 8072, "output_tokens": 200, "ttft_s": 60.414, "prefill_tps": 133.6, "decode_tps": 13.44}
+{"engine": "mlx-lm 0.32.2", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.58, "prefill_tps": 32.8, "decode_tps": 14.49}
+{"engine": "mlx-lm 0.32.2", "case": "long", "prompt_tokens": 8077, "output_tokens": 200, "ttft_s": 63.355, "prefill_tps": 127.5, "decode_tps": 13.55}
+{"engine": "Ollama 0.40.9", "case": "short", "prompt_tokens": 19, "output_tokens": 256, "ttft_s": 0.35, "prefill_tps": 54.3, "decode_tps": 13.37}
+{"engine": "Ollama 0.40.9", "case": "long", "prompt_tokens": 8077, "output_tokens": 200, "ttft_s": 63.552, "prefill_tps": 127.1, "decode_tps": 18.67}
+{"engine": "LM Studio llama.cpp", "case": "short", "prompt_tokens": 59, "output_tokens": 256, "ttft_s": 0.566, "prefill_tps": 104.3, "decode_tps": 12.95}
+{"engine": "LM Studio llama.cpp", "case": "long", "prompt_tokens": 8112, "output_tokens": 200, "ttft_s": 64.593, "prefill_tps": 125.6, "decode_tps": 16.12}
+{"engine": "LM Studio llama.cpp (MTP)", "case": "short", "prompt_tokens": 59, "output_tokens": 256, "ttft_s": 0.558, "prefill_tps": 105.8, "decode_tps": 12.28}
+{"engine": "LM Studio llama.cpp (MTP)", "case": "long", "prompt_tokens": 8112, "output_tokens": 200, "ttft_s": 66.795, "prefill_tps": 121.4, "decode_tps": 16.08}

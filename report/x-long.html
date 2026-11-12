@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>poster</title>
+<style>
+:root {
+  --bg: #0f1215; --panel: #171b20; --fg: #eef1f4; --muted: #8f9aa6; --line: #2a3038;
+  --accent: #ff8a3d; --plain: #5d6975; --ceiling: #6eaaf0;
+  --sans: "PingFang SC", "Hiragino Sans GB", -apple-system, sans-serif;
+  --mono: "SF Mono", "SFNSMono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); }
+body { width: 1080px; color: var(--fg); font-family: var(--sans); }
+.wrap { padding: 72px 72px 64px; display: grid; gap: 56px; }
+.eyebrow { font-family: var(--mono); font-size: 22px; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+h1 { font-size: 64px; line-height: 1.18; margin: 14px 0 0; font-weight: 700; letter-spacing: -.01em; }
+h1 em { font-style: normal; color: var(--accent); }
+.sub { font-size: 28px; color: var(--muted); margin-top: 18px; line-height: 1.5; }
+.spec { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.spec span { font-family: var(--mono); font-size: 20px; color: var(--fg); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; }
+
+.big { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 28px 30px; }
+.tile .k { font-size: 22px; color: var(--muted); }
+.tile .v { font-family: var(--mono); font-size: 76px; font-weight: 600; color: var(--accent); line-height: 1.1; margin-top: 8px; }
+.tile .v small { font-size: 26px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+.tile .n { font-size: 22px; color: var(--fg); margin-top: 10px; }
+
+h2 { font-size: 34px; margin: 0 0 22px; }
+.legend { font-size: 20px; color: var(--muted); display: flex; gap: 26px; margin-bottom: 26px; flex-wrap: wrap; }
+.legend i { display: inline-block; width: 16px; height: 16px; border-radius: 3px; margin-right: 8px; vertical-align: -2px; }
+.rows { display: grid; gap: 26px; }
+.row { display: grid; grid-template-columns: 230px 1fr; gap: 18px; align-items: center; }
+.name { font-size: 25px; line-height: 1.25; }
+.name small { display: block; font-size: 18px; color: var(--muted); }
+.track { position: relative; display: grid; gap: 7px; }
+.bar { height: 24px; border-radius: 0 4px 4px 0; background: var(--plain); position: relative; }
+.bar.me { background: var(--accent); }
+.bar.long { opacity: .5; }
+.bar b { z-index: 2; background: var(--bg); padding: 0 6px; margin-left: -6px; position: absolute; left: calc(100% + 10px); top: -1px; font-family: var(--mono); font-size: 21px; font-weight: 500; white-space: nowrap; }
+.ceil { z-index: 1; position: absolute; top: -8px; bottom: -8px; border-left: 3px dashed var(--ceiling); }
+.axis { display: grid; grid-template-columns: 230px 1fr; gap: 18px; margin-top: 14px; }
+.ticks { position: relative; height: 26px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 17px; color: var(--muted); }
+.ticks span { position: absolute; transform: translateX(-50%); top: 4px; }
+.note { font-size: 21px; color: var(--ceiling); margin-top: 20px; line-height: 1.5; }
+
+table { width: 100%; border-collapse: collapse; font-size: 22px; }
+th, td { padding: 14px 10px; border-bottom: 1px solid var(--line); text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--muted); font-weight: 500; font-size: 19px; }
+td { font-family: var(--mono); }
+td:first-child { font-family: var(--sans); }
+tr.me td { color: var(--accent); font-weight: 600; }
+
+ul { margin: 0; padding-left: 1.1em; display: grid; gap: 12px; font-size: 24px; line-height: 1.5; }
+ul li::marker { color: var(--accent); }
+.cav { color: var(--muted); font-size: 21px; }
+.foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); padding-top: 28px; font-size: 20px; color: var(--muted); font-family: var(--mono); }
+.foot b { color: var(--fg); font-family: var(--sans); font-size: 26px; }
+</style></head>
+<body><div class="wrap">
+
+<header>
+  <div class="eyebrow">big2flash 2.0 · local inference benchmark</div>
+  <h1>Mac 本地跑 27B 大模型<br><em>24–25 tok/s</em>，越过带宽上限</h1>
+  <div class="sub">用 Qwen3.8 自带的 MTP 头做推测解码：每步先猜下一个 token，主模型一次验证两个。贪心模式下输出与普通解码逐 token 一致。</div>
+  <div class="spec"><span>MacBook Pro M2 Max 96GB</span><span>Qwen3.8-27B 4-bit</span><span>贪心 · 不开思考</span><span>2026-11-03</span></div>
+</header>
+
+<section class="big">
+  <div class="tile"><div class="k">短提示生成速度</div><div class="v">24.04<small>tok/s</small></div><div class="n">比 Ollama 快 25%，比 mlx-lm 快 24%</div></div>
+  <div class="tile"><div class="k">7.8K 长提示生成速度</div><div class="v">25.33<small>tok/s</small></div><div class="n">比 mlx-lm 快 39%，与 Ollama 持平</div></div>
+</section>
+
+<section>
+  <h2>生成速度对比</h2>
+  <div class="legend">
+    <span><i style="background:var(--accent)"></i>big2flash</span>
+    <span><i style="background:var(--plain)"></i>其他引擎</span>
+    <span>上条 短提示 · 下条（浅） 7.8K 长提示</span>
+  </div>
+  <div class="rows" id="rows"></div>
+  <div class="axis"><div></div><div class="ticks" id="ticks"></div></div>
+  <div class="note">蓝色虚线 23.5 tok/s：逐 token 解码的物理上限（每个 token 读一遍 15.1 GB 权重，355 GB/s ÷ 15.1 GB）。只有推测解码能越过它。</div>
+</section>
+
+<section>
+  <h2>完整数据（tok/s）</h2>
+  <table>
+    <thead><tr><th>引擎</th><th>短提示</th><th>长提示</th><th>长提示预填充</th><th>首字</th></tr></thead>
+    <tbody>
+      <tr class="me"><td>big2flash 2.0（MTP）</td><td>24.04</td><td>25.33</td><td>179.1</td><td>43.6 s</td></tr>
+      <tr><td>big2flash 关 MTP</td><td>22.15</td><td>21.07</td><td>179.5</td><td>43.5 s</td></tr>
+      <tr><td>Ollama 0.40.9</td><td>19.27</td><td>24.76</td><td>150.7</td><td>51.8 s</td></tr>
+      <tr><td>mlx-lm 0.32.2</td><td>19.41</td><td>18.27</td><td>187.0</td><td>41.7 s</td></tr>
+      <tr><td>LM Studio llama.cpp</td><td>14.77</td><td>15.66</td><td>142.2</td><td>55.2 s</td></tr>
+      <tr><td>LM Studio（MTP）</td><td>13.84</td><td>15.01</td><td>135.4</td><td>57.9 s</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>2.0 做了什么</h2>
+  <ul>
+    <li>MTP 推测解码：一次前向验证两个位置，读权重的成本几乎不变</li>
+    <li>线性注意力层逐 token 保存状态，猜错可精确回滚</li>
+    <li>权重锁进内存：读取从约 40 GB/s 提到约 355 GB/s</li>
+    <li>增量解码文本，每 token 开销从 1.3 ms 降到 0.004 ms</li>
+    <li>App 1 MB，运行环境 365 MB（不含 torch）</li>
+  </ul>
+</section>
+
+<section>
+  <h2>读数说明</h2>
+  <ul class="cav">
+    <li>同一台机器，各引擎单独加载，同一脚本从客户端流式计时，每项取 2 次中较好的一次</li>
+    <li>GGUF 模型文件与 MLX 版不完全相同（约 17 GB 对 15.1 GB）</li>
+    <li>MTP 收益取决于内容：代码接受率高，开放式写作低一些</li>
+    <li>后台服务会间歇占用 GPU，同配置重复跑有约 ±10% 波动</li>
+  </ul>
+</section>
+
+<footer class="foot"><b>big2flash</b><span>M2 Max · Qwen3.8-27B · MLX</span></footer>
+</div>
+<script>
+const data = [
+  ["big2flash 2.0", "MTP", 24.04, 25.33, true],
+  ["big2flash", "关 MTP", 22.15, 21.07, true],
+  ["Ollama", "0.40.9", 19.27, 24.76],
+  ["mlx-lm", "0.32.2", 19.41, 18.27],
+  ["LM Studio", "llama.cpp", 14.77, 15.66],
+  ["LM Studio", "llama.cpp MTP", 13.84, 15.01],
+];
+const MAX = 30, CEIL = 23.5, pct = v => (v / MAX * 100) + "%";
+const rows = document.getElementById("rows");
+for (const [n, sub, s, l, me] of data) {
+  rows.insertAdjacentHTML("beforeend", `<div class="row"><div class="name">${n}<small>${sub}</small></div>
+    <div class="track"><div class="bar${me ? " me" : ""}" style="width:${pct(s)}"><b>${s.toFixed(2)}</b></div>
+    <div class="bar long${me ? " me" : ""}" style="width:${pct(l)}"><b>${l.toFixed(2)}</b></div>
+    <div class="ceil" style="left:${pct(CEIL)}"></div></div></div>`);
+}
+const ticks = document.getElementById("ticks");
+for (let v = 0; v <= 30; v += 5) ticks.insertAdjacentHTML("beforeend", `<span style="left:${pct(v)}">${v}</span>`);
+document.title = "H" + document.documentElement.scrollHeight;
+</script>
+</body></html>
